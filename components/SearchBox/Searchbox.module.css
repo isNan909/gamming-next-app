@@ -1,0 +1,6 @@
+.search_box {
+  display: flex;
+}
+.search_box > input[type='text'] {
+  color: #000;
+}
