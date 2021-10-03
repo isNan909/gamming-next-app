@@ -39,7 +39,8 @@ export const getServerSideProps = async () => {
       method: 'GET',
       headers: {
         'x-rapidapi-host': process.env.RAPID_API_HOST,
-        'x-rapidapi-key': process.env.RAPTIDAPI_KEY,
+        'x-rapidapi-key': process.env.RAPID_API_KEY,
+        'Content-Type': 'application/json',
       },
     }
   );
