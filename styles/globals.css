@@ -38,3 +38,6 @@ body {
 .header_box > a {
   display: inline-block;
 }
+.header_box p {
+  color: #16ee1e;
+}
