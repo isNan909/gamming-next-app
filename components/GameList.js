@@ -4,7 +4,17 @@ export default function GameList({ filteredGames }) {
   return (
     <>
       {filteredGames.map((game) => {
-        return <Games id={game.id} title={game.title} key={game.id} />;
+        return (
+          <div key={game.id}>
+            <Games
+              id={game.id}
+              title={game.title}
+              genre={game.genre}
+              thumbnail={game.thumbnail}
+              description={game.short_description}
+            />
+          </div>
+        );
       })}
     </>
   );

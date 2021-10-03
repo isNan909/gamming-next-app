@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Layout from '../components/Layout';
 import SearchBox from '../components/SearchBox';
 import GameList from '../components/GameList';
-// import getGames from '../utils/api';
 
 import styles from '../styles/Home.module.css';
 
@@ -14,9 +13,9 @@ export default function Home({ filteredGames }) {
     setSearch(e.target.value.toLowerCase());
   };
 
-  const filterGames = filteredGames.filter((game) =>
-    game.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filterGames = filteredGames.filter((game) => {
+    return game.title.toLowerCase().includes(search.toLowerCase());
+  });
 
   return (
     <Layout>
@@ -26,7 +25,9 @@ export default function Home({ filteredGames }) {
           placeholder="Search your game.."
           onChange={handleChange}
         />
-        <GameList filteredGames={filterGames} />
+        <div className={styles.cardList}>
+          <GameList filteredGames={filterGames} />
+        </div>
       </div>
     </Layout>
   );

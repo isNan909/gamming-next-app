@@ -1,15 +1,26 @@
 import styles from './Games.module.css';
 import Link from 'next/link';
 
-const Games = ({ id, title }) => {
+const Games = ({ id, title, thumbnail, genre, description }) => {
   return (
-    <Link href="/game/[id]" as={`/game/${id}`}>
-      <a>
-        <div className={styles.game_container}>
-          <h3>{title}</h3>
-        </div>
-      </a>
-    </Link>
+    <div className={styles.game_container}>
+      <div>
+        <Link href="/game/[id]" as={`/game/${id}`}>
+          <a>
+            <div className={styles.game_container}>
+              <div className={styles.game_card}>
+                <img src={thumbnail} alt={title} className={styles.coin_img} />
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <div>
+                  <span>{genre}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </Link>
+      </div>
+    </div>
   );
 };
 
